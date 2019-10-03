@@ -20,7 +20,11 @@ const HomeStack = createStackNavigator(
     Price,
     CameraScreen
   },
-  config
+{
+  mode:'modal',
+  config,
+  headerTransitionPreset:'fade-in-place'
+}
 );
 
 HomeStack.navigationOptions = {

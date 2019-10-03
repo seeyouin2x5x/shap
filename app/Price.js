@@ -17,6 +17,7 @@ export class PriceInput extends React.Component {
     
 
   onInputValueChange = (inputValue) => {
+    this.props.priceValue(inputValue)
     this.setState({ inputValue });
   };
 
@@ -57,6 +58,7 @@ export class PriceInput extends React.Component {
         onIconPress={this.onIconPress}
         icon={this.renderIcon}
         onChangeText={this.onInputValueChange}
+      
       />
     );
   }
@@ -66,15 +68,21 @@ export  class Price extends Component {
     static navigationOptions = {
         title:'Amount'
     }
+    state = {
+      price:0
+    }
 
     _handleNext = ()=>{
-        return this.props.navigation.navigate('CameraScreen')
+        const {price} = this.state
+        return this.props.navigation.navigate('CameraScreen',{price})
     }
     render() {
         return (
             <Layout>
                 <View style={{paddingHorizontal:24,paddingTop:12}}>
-                    <PriceInput />
+                    <PriceInput priceValue={(price)=>{
+                      this.setState({price})
+                    }} />
                     <Button onPress={this._handleNext} secureTextEntry={true} icon={FacebookIcon}>next</Button>
 
                 </View>
