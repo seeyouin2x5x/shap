@@ -30,7 +30,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
     "react-native-gesture-handler": "~1.3.0",
     "react-native-pinch-zoom-view-movable": "^0.2.1",
-    "react-native-reanimated": "~1.2.0",
+    "react-native-reanimated": "~2.10.0",
     "react-native-svg": "~9.9.2",
     "react-native-ui-kitten": "^4.2.0",
     "react-native-web": "^0.11.7",
